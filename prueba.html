@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Prueba</title>
+	<meta name="description" content="Es una prueba de programacion con los eventos de js">
+	<meta name="Author" content="Marcelo Calderon">
+	<meta name="keywords" content="clave">
+
+	
+</head>
+<body style="font-family: Century Gothic" onload="init()">
+
+	<nav>
+		<ul>
+			<li><a href="#">Inicio</a></li>
+			<li><a href="#">Noticias</a></li>
+			<li><a href="#">Contactos</a></li>
+		</ul> 
+	</nav>
+
+	<h1 align="center">Restaurante comida- Platos a $0.75</h1>
+
+	<section style="text-align: center;">
+			
+		<p>El mejor precio</p>
+
+	</section>
+
+	<table align="center">
+		
+	<tr>
+		
+		<td><img src="chicharron.jpg" height="180" width="400" id="imgTienda"></td>
+		<td>
+			
+		<table style="font-size: 20px">
+			
+			<tr> 
+
+				<td><label># Chicharrones:</label></td>
+				<td><label><input type="text" id="txtChicharron" onchange="chich()" value="0" style="font-size: 17px"/></label></td>
+
+			</tr>
+			<tr>
+					
+				<td><label># Guatitas:</label></td>
+				<td><label><input type="text" id="txtGuatita" onchange="guatita()" value="0" style="font-size: 17px"/></label></td>
+
+			</tr>
+
+			<tr>
+					
+				<td><label>Total Pedidos:</label></td>
+				<td><label><input type="text" id="txtTotal" style="font-size: 17px"/></label></td>
+
+			</tr>
+
+		</table>
+
+		</td>
+
+	</tr>
+
+	</table>
+
+	<br/><br/>
+
+
+
+</body>
+
+<script>
+	
+function total() {
+	var numeroChicharrones = document.getElementById("txtChicharron").value;
+	var numeroGuatitas = document.getElementById("txtGuatita").value;
+	var auxTotal = 0;
+	auxTotal = parseInt(numeroGuatitas) + parseInt(numeroChicharrones);
+	document.getElementById("txtTotal").value = parseInt(auxTotal);
+}
+
+function chich() {
+	total();
+	document.getElementById("imgTienda").src = "chicharron.jpg";
+}
+
+function guatita() {
+	total();
+	document.getElementById("imgTienda").src = "guatita.jpg";
+}
+
+function init() {
+	document.getElementById("txtChicharron").value = parseInt(0);
+	document.getElementById("txtGuatita").value = parseInt(0);
+	document.getElementById("txtTotal").value = parseInt(0);
+}
+
+</script>
+</html>
